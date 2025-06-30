@@ -41,6 +41,5 @@
 * R5: representa o celular ou outro dispositivo que esteja sendo alimentado pelo circuito.
 
 ## Cálculo da Capacitância
-    <div align="center">
-       <img src="https://github.com/user-attachments/assets/83b06a32-4922-4d65-be3e-5850f0d40f22" alt="Logo da empresa" width="200"/>
-    </div>
+   ![image](https://github.com/user-attachments/assets/946996cb-1481-40ed-8275-4efc25b6c3ce)
+
