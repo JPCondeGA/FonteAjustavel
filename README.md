@@ -33,13 +33,13 @@
   Ou seja, a tensão na carga será 12,3 V com o potenciômetro no mínimo, sendo possível a carga pegar 12 V, como desejado. Já a corrente que passa pela carga pode ser dada pela corrente que vai até a base multiplicada pelo fator de amplificação de corrente do transistor, que normalmente é 100. Assim, a corrente que vai até a base deve ser no mínimo 1 mA, para que na carga seja 1 * 100 = 100 mA, cumprindo os requisitos do projeto.
 
 ### Resistores
----Componentes capazes de segurar uma parte da tensão do circuito. No nosso circuito, foi utilizado para limitar a corrente e a potência que passam pelos componentes, a fim de não permitir a queima deles e, simultaneamente, permitir que continuem ligados. Seguindo a denominação no esquema abaixo, temos:
+ Componentes capazes de segurar uma parte da tensão do circuito. No nosso circuito, foi utilizado para limitar a corrente e a potência que passam pelos componentes, a fim de não permitir a queima deles e, simultaneamente, permitir que continuem ligados. Seguindo os valores da imagem do simulador Falstad, temos:
 * R1: diminui a corrente que passa pelo LED, evitando que esse queime, e também não “roubando” as correntes dos circuitos em paralelo.
 * R2: controla a corrente que passa pelo zener, deve ter o valor alto suficiente para que o mínimo de corrente passe pelo zener, já que essa corrente é um desperdício para a finalidade do circuito e pode queimar o zener; mas não pode ser alto a ponto de não passar a corrente mínima no zener, desligando-o.
 * R3: utilizado para que tensão seja dividida entre o potenciômetro e ele; assim, mesmo que o potênciometro esteja no máximo de resistência, o caminho que vai para a base do transistor não terá 0 V, mas sim a tensão segurada pelo R3; ou seja, se quisermos alterar a tensão mínima oferecida pela fonte, alteramos o R3. 
 * R4: diminui a potência que passa pelo transistor para que este não queima; ele aguenta aproximadamente 1 W, porém quando o potenciômetro está no máximo de resistência, a potência no transistor tende a aumentar muito, já que com maior resistência nesse ramo em paralelo, irá passar menor corrente por ele e maior pelo transistor.
 * R5: representa o celular ou outro dispositivo que esteja sendo alimentado pelo circuito.
 
+## Cálculo da Capacitância
 
-
-
+![image](https://github.com/user-attachments/assets/83b06a32-4922-4d65-be3e-5850f0d40f22)
