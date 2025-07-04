@@ -113,9 +113,12 @@
 |Resistor 82R 2W| 1 | R$ 1,20|
 |Resistor 120R 2W| 1 | R$ 1,20|
 |Resistor 2.2R | 2 | R$ 0,07 * 2 = R$ 0,14|
-|Resistor 510R | 1 | R$ R$ 0,07| 
+|Resistor 510R | 1 | R$ 0,07| 
+|Protoboard 2 Barraas| 1 | R$ 39,10
 
-OBS: perceba que usamos 510 Ohms ao em vez de 600 Ohms no R2, o que aumentou um pouco a corrente sobre o zener, mas sem prejudicar o circuito.
+OBS1: perceba que usamos 510 Ohms ao em vez de 600 Ohms no R2, o que aumentou um pouco a corrente sobre o zener, mas sem prejudicar o circuito.
+
+OBS2: protoboard é uma placa utilizada para prototipação de circuitos, ou seja, onde se conecta os demais componentes; por ela não fazer parte do circuito em si, não foi explicada nos tópicos superiores.
 
 ## Projeto no Simulador Falstad
 
