@@ -136,6 +136,10 @@ Link: https://tinyurl.com/25k4nc4b
 
 ![layout](https://github.com/user-attachments/assets/b754c4dd-0ce6-42c6-a7e8-353d21c39b4d)
 
+## Fotos do Projeto
+
+![image](https://github.com/user-attachments/assets/7487e3f3-a520-4b81-8a58-1dc3e23a68e5)
+
 ## Vídeo Explicativo
 
 Link:
