@@ -101,7 +101,7 @@
 
 ## Tabela de Preços
 
-| Produto | Quantidade | Valor |
+| Componente | Quantidade | Valor |
 |---------|------------|-------|
 |Transformador 15+15VAC| 1 | R$ 38,60|
 |Ponte retificadora | 1 | R$ 3,90|
