@@ -10,6 +10,10 @@
   
   Voltando ao transformador, ele é constituído por duas bobinas com quantidade de voltas diferentes enroladas em um material ferromagnético (como no desenho abaixo). 
 
+  ![image](https://github.com/user-attachments/assets/3f5da713-2272-4da9-a45f-e38761a37ec6)
+ 
+  Fonte: _https://manutencaodecabine.com.br/transformador-de-forca/_
+  
   Seu funcionamento se baseia na relação entre o campo magnético gerado por uma das bobinas com a outra bobina que gera uma tensão induzida. O núcleo ferromagnético ajuda essa interação acontecer, conduzindo o campo. Assim, a diminuição da tensão ocorre a depender da relação entre voltas dos enrolamentos: enrolamento primária com maior número de espiras é ligado a rede elétrica, enrolamento secundário com menor número de voltas é conectado à fonte. O transformador escolhido disponibilizado pelo professor foi aquele cuja tensão medida no capacitor era de 22 V. Testando no simulador, chegamos que o transformador tem uma razão entre o número de voltas igual a 7,45. Dessa forma, o pico da tensão que sai do transformador (pois a corrente ainda é alternada) conectado na tensão da tomada é 179,6/7,45 ~ 24,1 V (pico da tensão antes da ponte de diodo).
  
   É importante notar ainda que a potência (P = U * I) é igual nos dois lados do transformador, assim como no enrolamento primário tem uma tensão maior, a corrente nele é menor e por isso, apresenta fios mais finos. Então, os fios menores servem para ligar na tomada! (muito importante para não explodir o transformador).
@@ -18,9 +22,18 @@
   Componente formado por quatro diodos e possui a finalidade de transformar os vales da onda em picos, processo que denominamos como retificação da onda. Graças a esse elemento, aproveitamos ao máximo a onda de corrente alternada no circuito, transformando o que chamamos de meia onda em onda completa. 
   
   Nele, os diodos, componentes que permitem a passagem de corrente somente em uma direção (anodo para o catodo), são organizados de forma que na parte positiva e na parte negativa da onda sempre a corrente passe por dois diodos e é impedida por outros dois e entregue para o circuito sempre o positivo para o mesmo lado do circuito e o negativo para o outro lado. Como cada diodo precisa de 0,7 V para começar a conduzir e sempre a corrente passa por dois (um na ida e outro na volta), a tensão que será passada no restante circuito será 24,1 - 2*0,7 = 24,1 - 1,4 = 22,7 V. O seguinte diagrama representa a ponte de diodo, veja que o positivo sempre sai para o mesmo lado e o negativo para o lado oposto:
- 
+  
+  ![image](https://github.com/user-attachments/assets/2e1e0331-2af5-4a96-b49d-f1c2d8fbf2dd)
+  
+  Fonte: _https://celista.com.br/ponte-retificadora-o-que-e-como-testar/_ 
+
  A onda resultante é do tipo:
  
+ ![image](https://github.com/user-attachments/assets/b41d7d64-635e-41c9-b79f-c0545d47e3a5)
+ 
+ Fonte: _https://www.cmm.gov.mo/por/exhibition/secondfloor/moreinfo/2_16_0_DiodeLab.html_
+ 
+
  Assim, a quantidade de picos aumentou, ou seja, a frequência aumentou, ou melhor, dobrou. Então, a frequência é 60 * 2 = 120 Hz.
 
 ### Capacitor
@@ -106,10 +119,19 @@ OBS: perceba que usamos 510 Ohms ao em vez de 600 Ohms no R2, o que aumentou um 
 
 ## Projeto no Simulador Falstad
 
+![Falstad](https://github.com/user-attachments/assets/102f22bf-a5a1-43ce-9d79-dc6145786a4a)
+
 Link: https://tinyurl.com/25k4nc4b
 
 ## Projeto no EAGLE 
 
+### Esquemático
+
+![esquemático](https://github.com/user-attachments/assets/cc143ecd-f127-4374-a5b3-3062d4c9595b)
+
+### Layout da PCB
+
+![layout](https://github.com/user-attachments/assets/b754c4dd-0ce6-42c6-a7e8-353d21c39b4d)
 
 ## Vídeo Explicativo
 
