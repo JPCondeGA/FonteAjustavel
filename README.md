@@ -43,18 +43,18 @@
  A capacitância escolhida para o capacitor pode ser calculada usando a seguinte fórmula: 
  Para aplicarmos ela, devemos saber o valor da corrente total do circuito, tensão de ripple (que varia) e a frequência da onda. Já sabemos a frequência (120 Hz) e, sendo o ripple buscado de no mínimo 10% (considerado ideal para esse tipo de fontes), então Vripple = 0,1 * 22,7 = 2,2 V (assim a onda está indo de 22,7 V até  20,5 V). Desse modo, falta sabermos a corrente total que passa pelo circuito. Para isso, somamos a corrente que passa por cada ramo paralelo. 
  No LED, desejamos uma corrente de 10 mA, já que 20 mA tem perigo de queimá-lo. Com isso que chegamos no valor do R1, pois (V é a tensão pico (caso mais crítico) após a ponte de diodo e Vled a tensão usada para ligar o LED): 
-     Iled = V/R => Iled = (V - Vled) / R1 => 10^(-2) = (22,5 - 2,8) / R1 => R1 = 1870 K (pegamos 2K, que só diminuirá mais um pouco a corrente, sem prejuízo para a utilização do LED).
+    * Iled = V/R => Iled = (V - Vled) / R1 => 10^(-2) = (22,5 - 2,8) / R1 => R1 = 1870 K (pegamos 2K, que só diminuirá mais um pouco a corrente, sem prejuízo para a utilização do LED).
  Na carga, chegará a uma corrente que depende da tensão que o zener bloqueia (Vzener), oferecendo para o circuito em paralelo, a tensão necessária para ligar o transistor (Vbe) e do coeficiente beta (B) do transistor (coeficiente de aumento de corrente que no nosso caso é 100), além da resistência da carga. Assim: 
-     Icarga = ((Vzener - Vbe) / Rcarga) * B = ((13 - 0,7) / 120) * 100 ~ 0,1 A = 100 mA (valor que queríamos).
+    * Icarga = ((Vzener - Vbe) / Rcarga) * B = ((13 - 0,7) / 120) * 100 ~ 0,1 A = 100 mA (valor que queríamos).
   Já no ramo do potenciômetro, teremos que ver o valor total dos resistores nessa trajetório:
-     Rt = 600 + 5000 + 2200 = 7710 Ohms
+    * Rt = 600 + 5000 + 2200 = 7710 Ohms
   Assim:
-     Ipot = 22,7 / 7710 ~ 0,002 = 2 mA
+    * Ipot = 22,7 / 7710 ~ 0,002 = 2 mA
   Por fim, a corrente que passa pelo zener devemos calcular levando em consideração que o zener bloqueia 13 V, assim somente a os valores acima desse farão corrente passar por ele. Além disso, precisamos lembrar que R2 está em série com, ficando:
-     Izener = (22,7 - 13)/600 ~ 0,016 = 16 mA 
+    * Izener = (22,7 - 13)/600 ~ 0,016 = 16 mA 
   Portanto, sendo a corrente total a soma de todas em paralelo, conseguimos:
-     I = Iled + Icarga + Ipot + Izener = 0,01 + 0,1 + 0,002 + 0,016 = 0,128 = 128 mA
+    * I = Iled + Icarga + Ipot + Izener = 0,01 + 0,1 + 0,002 + 0,016 = 0,128 = 128 mA
    Agora sim obtemos todos os "ingredientes" para calcular a capacitância:
-     C = I / (f * Vripple) = 0,128 / (120 * 2,2) ~ 0,000533 = 533 uF
+    * C = I / (f * Vripple) = 0,128 / (120 * 2,2) ~ 0,000533 = 533 uF
    OBS: o capacitor utilizado no projeto real foi o de 680 uF, porém isso não afeta negativamente o projeto, pois como já explicado, quanto maior a capacitância, menor o ripple, o que faz a onda ficar ainda mais estável.
 
