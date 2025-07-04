@@ -7,14 +7,18 @@
 
 ### Transformador
  Componente capaz de aumentar ou diminuir a tensão em um circuito. No nosso caso, será usado para diminuir a tensão que vêm da tomada para a fonte poder usá-la. A tensão RMS (tensão efetiva se usada em um circuito de CA) que vêm da rede elétrica é 127 volts e 60 Hz de frequência. Para se calcular a RMS, é feita a integral da senóide da onda descrita pela corrente (pico da senoide dividido por √2). Portanto, para sabermos o pico dessa tensão, fazemos 127/√2 = 179,6 V, isto é, 179,6 volts é o pico da tensão que vem da tomada. 
+  
   Voltando ao transformador, ele é constituído por duas bobinas com quantidade de voltas diferentes enroladas em um material ferromagnético (como no desenho abaixo). 
 
   Seu funcionamento se baseia na relação entre o campo magnético gerado por uma das bobinas com a outra bobina que gera uma tensão induzida. O núcleo ferromagnético ajuda essa interação acontecer, conduzindo o campo. Assim, a diminuição da tensão ocorre a depender da relação entre voltas dos enrolamentos: enrolamento primária com maior número de espiras é ligado a rede elétrica, enrolamento secundário com menor número de voltas é conectado à fonte. O transformador escolhido disponibilizado pelo professor foi aquele cuja tensão medida no capacitor era de 22 V. Testando no simulador, chegamos que o transformador tem uma razão entre o número de voltas igual a 7,45. Dessa forma, o pico da tensão que sai do transformador (pois a corrente ainda é alternada) conectado na tensão da tomada é 179,6/7,45 ~ 24,1 V (pico da tensão antes da ponte de diodo).
+ 
   É importante notar ainda que a potência (P = U * I) é igual nos dois lados do transformador, assim como no enrolamento primário tem uma tensão maior, a corrente nele é menor e por isso, apresenta fios mais finos. Então, os fios menores servem para ligar na tomada! (muito importante para não explodir o transformador).
 
 ### Ponte de Diodo
   Componente formado por quatro diodos e possui a finalidade de transformar os vales da onda em picos, processo que denominamos como retificação da onda. Graças a esse elemento, aproveitamos ao máximo a onda de corrente alternada no circuito, transformando o que chamamos de meia onda em onda completa. Nele, os diodos, componentes que permitem a passagem de corrente somente em uma direção (anodo para o catodo), são organizados de forma que na parte positiva e na parte negativa da onda sempre a corrente passe por dois diodos e é impedida por outros dois e entregue para o circuito sempre o positivo para o mesmo lado do circuito e o negativo para o outro lado. Como cada diodo precisa de 0,7 V para começar a conduzir e sempre a corrente passa por dois (um na ida e outro na volta), a tensão que será passada no restante circuito será 24,1 - 2*0,7 = 24,1 - 1,4 = 22,7 V. O seguinte diagrama representa a ponte de diodo, veja que o positivo sempre sai para o mesmo lado e o negativo para o lado oposto:
+ 
  A onda resultante é do tipo:
+ 
  Assim, a quantidade de picos aumentou, ou seja, a frequência aumentou, ou melhor, dobrou. Então, a frequência é 60 * 2 = 120 Hz.
 
 ### Capacitor
@@ -22,6 +26,7 @@
 
 ### Diodo Zener
  Componente que funciona como um diodo se colocado da maneira convencional no circuito, porém se colocado ao contrário (modo zener) faz com que só passe corrente por ele a partir de um valor específico de diferença de potencial. Assim, utilizamos o diodo zener no modo zener para travar a tensão nos componentes paralelos a ele em 13 V (já que queremos uma fonte que entrega no máximo 12 V). Qualquer excesso de tensão acima de 13 V originário do ripple passará pelo zener. Assim, dizemos que esse diodo zener possui tensão zener de 13 V. Isso, junto do capacitor, estabiliza quase que totalmente a corrente, originando praticamente uma corrente contínua. 
+ 
  É importante dizer que o zener aguenta pouca potência, por volta de 400 mW, porém também precisa de uma corrente mínima para ligar. Assim, o resistor antes dele deve ser muito bem escolhido.
  
 ### Potenciômetro
@@ -29,6 +34,7 @@
 
 ### Transistor
   Componente que ao ter corrente na base, permite a passagem de corrente entre coletor e emissor. No nosso circuito, ele é muito importante para que a tensão na carga seja a que está sendo estabilizada pelo zener diminuída ou não pelo potenciômetro, e, ao mesmo tempo, a corrente que passa pela carga seja maior que a oferecida pelo potenciômetro. A tensão no emissor de um transistor pode ser calculada por meio da subtração entre a tensão entre a base e o emissor (a qual é aquela oferecida pelo potenciômetro)  e a tensão necessária para ligar o transistor (cerca de 0,7 V). Caso o potenciômetro esteja no mínimo de resistência, então: 
+ 
   Ou seja, a tensão na carga será 12,3 V com o potenciômetro no mínimo, sendo possível a carga pegar 12 V, como desejado. Já a corrente que passa pela carga pode ser dada pela corrente que vai até a base multiplicada pelo fator de amplificação de corrente do transistor, que normalmente é 100. Assim, a corrente que vai até a base deve ser no mínimo 1 mA, para que na carga seja 1 * 100 = 100 mA, cumprindo os requisitos do projeto.
 
 ### Resistores
@@ -46,8 +52,10 @@
  
  No LED, desejamos uma corrente de 10 mA, já que 20 mA tem perigo de queimá-lo. Com isso que chegamos no valor do R1, pois (V é a tensão pico (caso mais crítico) após a ponte de diodo e Vled a tensão usada para ligar o LED): 
  
-    Iled = V/R => Iled = (V - Vled) / R1 => 10^(-2) = (22,5 - 2,8) / R1 => R1 = 1870 K (pegamos 2K, que só diminuirá mais um pouco a corrente, sem prejuízo para a utilização do LED).
-    
+    Iled = V/R => Iled = (V - Vled) / R1 => 10^(-2) = (22,5 - 2,8) / R1 => R1 = 1870 K
+
+ OBS: utilizamos de 2K, que só diminuirá mais um pouco a corrente, sem prejuízo para a utilização do LED.
+ 
  Na carga, chegará a uma corrente que depende da tensão que o zener bloqueia (Vzener), oferecendo para o circuito em paralelo, a tensão necessária para ligar o transistor (Vbe) e do coeficiente beta (B) do transistor (coeficiente de aumento de corrente que no nosso caso é 100), além da resistência da carga. Assim: 
   
     * Icarga = ((Vzener - Vbe) / Rcarga) * B = ((13 - 0,7) / 120) * 100 ~ 0,1 A = 100 mA (valor que queríamos).
