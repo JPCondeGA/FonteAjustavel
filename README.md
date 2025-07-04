@@ -56,11 +56,11 @@
 
 ### Resistores
  Componentes capazes de segurar uma parte da tensão do circuito. No nosso circuito, foi utilizado para limitar a corrente e a potência que passam pelos componentes, a fim de não permitir a queima deles e, simultaneamente, permitir que continuem ligados. Seguindo os valores da imagem do simulador Falstad, temos:
-* R1: diminui a corrente que passa pelo LED, evitando que esse queime, e também não “roubando” as correntes dos circuitos em paralelo.
-* R2: controla a corrente que passa pelo zener, deve ter o valor alto suficiente para que o mínimo de corrente passe pelo zener, já que essa corrente é um desperdício para a finalidade do circuito e pode queimar o zener; mas não pode ser alto a ponto de não passar a corrente mínima no zener, desligando-o.
-* R3: utilizado para que tensão seja dividida entre o potenciômetro e ele; assim, mesmo que o potênciometro esteja no máximo de resistência, o caminho que vai para a base do transistor não terá 0 V, mas sim a tensão segurada pelo R3; ou seja, se quisermos alterar a tensão mínima oferecida pela fonte, alteramos o R3. 
-* R4: diminui a potência que passa pelo transistor para que este não queima; ele aguenta aproximadamente 1 W, porém quando o potenciômetro está no máximo de resistência, a potência no transistor tende a aumentar muito, já que com maior resistência nesse ramo em paralelo, irá passar menor corrente por ele e maior pelo transistor.
-* R5: representa o celular ou outro dispositivo que esteja sendo alimentado pelo circuito.
+* R1 (de 2.2k Omhs no Falstad): diminui a corrente que passa pelo LED, evitando que esse queime, e também não “roubando” as correntes dos circuitos em paralelo.
+* R2 (de 510 Omhs no Falstad): controla a corrente que passa pelo zener, deve ter o valor alto suficiente para que o mínimo de corrente passe pelo zener, já que essa corrente é um desperdício para a finalidade do circuito e pode queimar o zener; mas não pode ser alto a ponto de não passar a corrente mínima no zener, desligando-o.
+* R3 (de 2k Omhs no Falstad, logo abaixo ao pontenciômetro): utilizado para que tensão seja dividida entre o potenciômetro e ele; assim, mesmo que o potênciometro esteja no máximo de resistência, o caminho que vai para a base do transistor não terá 0 V, mas sim a tensão segurada pelo R3; ou seja, se quisermos alterar a tensão mínima oferecida pela fonte, alteramos o R3. 
+* R4 (de 45 Omhs no Falstad): diminui a potência que passa pelo transistor para que este não queima; ele aguenta aproximadamente 1 W, porém quando o potenciômetro está no máximo de resistência, a potência no transistor tende a aumentar muito, já que com maior resistência nesse ramo em paralelo, irá passar menor corrente por ele e maior pelo transistor.
+* R5 (de 120 Omhs no Falstad): representa o celular ou outro dispositivo que esteja sendo alimentado pelo circuito.
 
 ## Cálculo da Capacitância
  A capacitância escolhida para o capacitor pode ser calculada usando a seguinte fórmula: 
@@ -79,11 +79,11 @@
  
   Já no ramo do potenciômetro, teremos que ver o valor total dos resistores nessa trajetório:
   
-    Rt = 600 + 5000 + 2200 = 7710 Ohms
+    Rt = 600 + 5000 + 2000 = 7600 Ohms
     
   Assim:
   
-    Ipot = 22,7 / 7710 ~ 0,002 = 2 mA
+    Ipot = 22,7 / 7600 ~ 0,003 = 3 mA
     
   Por fim, a corrente que passa pelo zener devemos calcular levando em consideração que o zener bloqueia 13 V, assim somente a os valores acima desse farão corrente passar por ele. Além disso, precisamos lembrar que R2 está em série com, ficando:
     
@@ -91,11 +91,11 @@
   
   Portanto, sendo a corrente total a soma de todas em paralelo, conseguimos:
     
-    I = Iled + Icarga + Ipot + Izener = 0,01 + 0,1 + 0,002 + 0,016 = 0,128 = 128 mA
+    I = Iled + Icarga + Ipot + Izener = 0,01 + 0,1 + 0,003 + 0,016 = 0,128 = 129 mA
    
   Agora sim obtemos todos os "ingredientes" para calcular a capacitância:
     
-    C = I / (f * Vripple) = 0,128 / (120 * 2,2) ~ 0,000533 = 533 uF
+    C = I / (f * Vripple) = 0,129 / (120 * 2,2) ~ 0,000488 = 488 uF
    
    OBS: o capacitor utilizado no projeto real foi o de 680 uF, porém isso não afeta negativamente o projeto, pois como já explicado, quanto maior a capacitância, menor o ripple, o que faz a onda ficar ainda mais estável.
 
@@ -112,19 +112,22 @@
 |Resistor 100R 2W| 1 | R$ 1,20|
 |Resistor 82R 2W| 1 | R$ 1,20|
 |Resistor 120R 2W| 1 | R$ 1,20|
-|Resistor 2.2R | 2 | R$ 0,07 * 2 = R$ 0,14|
+|Resistor 1000R | 1 | R$ 0,07 * 2 = R$ 0,14|
+|Resistor 2.2R | 1 | R$ 0,07|
 |Resistor 510R | 1 | R$ 0,07| 
 |Protoboard 2 Barras| 1 | R$ 39,10
 
 OBS1: perceba que usamos 510 Ohms ao em vez de 600 Ohms no R2, o que aumentou um pouco a corrente sobre o zener, mas sem prejudicar o circuito.
 
-OBS2: protoboard é uma placa utilizada para prototipação de circuitos, ou seja, onde se conecta os demais componentes; por ela não fazer parte do circuito em si, não foi explicada nos tópicos superiores.
+OBS2: perceba também que não há o resistor de 2000 Ohms e o de 45 Ohms, porém esses foram feitos colocando dois de 1000 Ohms em sére e colocando um de 100 e outro 82 em paralelo, respectivamente.
+
+OBS3: protoboard é uma placa utilizada para prototipação de circuitos, ou seja, onde se conecta os demais componentes; por ela não fazer parte do circuito em si, não foi explicada nos tópicos superiores.
 
 ## Projeto no Simulador Falstad
 
-![Falstad](https://github.com/user-attachments/assets/102f22bf-a5a1-43ce-9d79-dc6145786a4a)
+![image](https://github.com/user-attachments/assets/0a3dda83-dcf1-4a67-8da2-92751b13621f)
 
-Link: https://tinyurl.com/25k4nc4b
+Link: https://tinyurl.com/2ygrcmyx
 
 ## Projeto no EAGLE 
 
@@ -139,6 +142,8 @@ Link: https://tinyurl.com/25k4nc4b
 ## Fotos do Projeto
 
 ![image](https://github.com/user-attachments/assets/7487e3f3-a520-4b81-8a58-1dc3e23a68e5)
+
+![image](https://github.com/user-attachments/assets/d746fa91-73ab-4080-9802-59c948d7c0f4)
 
 ## Vídeo Explicativo
 
