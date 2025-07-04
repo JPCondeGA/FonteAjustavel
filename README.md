@@ -97,3 +97,24 @@
 |Resistor 120R 2W| 1 | R$ 1,20|
 |Resistor 2.2R | 2 | R$ 0,07 * 2 = R$ 0,14|
 |Resistor 510R | 1 | R$ R$ 0,07| 
+
+OBS: perceba que usamos 510 Ohms ao em vez de 600 Ohms no R2, o que aumentou um pouco a corrente sobre o zener, mas sem prejudicar o circuito.
+
+## Projeto no Simulador Falstad
+
+Link: https://tinyurl.com/25k4nc4b
+
+## Projeto no EAGLE 
+
+
+## Vídeo Explicativo
+
+Link:
+
+## Grupo
+
+* João Pedro Conde Gomes Alves
+* Antonio Carlos Madalozzo Gonzaga
+* Danilo de Oliveira Lopes
+* Eduardo Benedini Bueno
+
