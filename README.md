@@ -82,3 +82,18 @@
    
    OBS: o capacitor utilizado no projeto real foi o de 680 uF, porém isso não afeta negativamente o projeto, pois como já explicado, quanto maior a capacitância, menor o ripple, o que faz a onda ficar ainda mais estável.
 
+## Tabela de Preços
+
+| Produto | Quantidade | Valor |
+|---------|------------|-------|
+|Transformador 15+15VAC| 1 | R$ 38,60|
+|Ponte retificadora | 1 | R$ 3,90|
+|Capacitor 680 uF | 1 | R$ 5,80|
+|Diodo Zener 13V| 1 | R$ 0,50|
+|Potenciômetro 5K| 1 | R$ 7,00|
+|LED| 1 | R$ 0,50| 
+|Resistor 100R 2W| 1 | R$ 1,20|
+|Resistor 82R 2W| 1 | R$ 1,20|
+|Resistor 120R 2W| 1 | R$ 1,20|
+|Resistor 2.2R | 2 | R$ 0,07 * 2 = R$ 0,14|
+|Resistor 510R | 1 | R$ R$ 0,07| 
